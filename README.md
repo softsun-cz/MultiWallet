@@ -1,4 +1,4 @@
-# MultiWallet - smart contracts
+# MultiWallet - smart contract
 
 1. Edit .secret and put there a wallet mnemonic phrase (24 words) - you need to have some gas on it
 2. Register on polygonscan.com, bscscan.com etc. and create your new API keys

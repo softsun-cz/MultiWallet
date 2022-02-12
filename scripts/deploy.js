@@ -18,8 +18,8 @@ async function main() {
  var multiWallet = await deploy('MultiWallet');
  createVerifyScript();
  getTotalCost();
- await runFunction(multiWallet, 'addWallet', _addressOne, 7000); // 70%
- await runFunction(multiWallet, 'addWallet', _addressTwo, 3000); // 30%
+ await runFunction(multiWallet, 'addWallet', addressOne, 7000); // 70%
+ await runFunction(multiWallet, 'addWallet', addressTwo, 3000); // 30%
  getTotalCost();
  await getSummary();
 }

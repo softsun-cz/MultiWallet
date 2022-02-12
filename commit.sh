@@ -1,6 +1,6 @@
 #!/bin/sh
 
-REPO=NFT.git
+REPO=MultiWallet.git
 USER=softsun-cz
 PASS=`cat ./.secret_git`
 
