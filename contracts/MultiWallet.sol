@@ -18,8 +18,10 @@ contract MultiWallet is Ownable {
     function send(address _addressToken, uint _amount) public {
         IERC20 token = IERC20(_addressToken);
         require(token.allowance(msg.sender, address(this)) >= _amount, 'send: Token allowance is too low');
+        require(token.balanceOf(msg.sender) >= _amount, 'send: Not enough tokens in sender wallet');
         token.safeTransferFrom(msg.sender, address(this), _amount);
-        for (uint i = 0; i < wallets.length; i++) token.safeTransferFrom(address(this), wallets[i].addressWallet, _amount * wallets[i].sharePercent / 10000);
+        uint amountBal = token.balanceOf(address(this));
+        for (uint i = 0; i < wallets.length; i++) token.safeTransferFrom(address(this), wallets[i].addressWallet, amountBal * wallets[i].sharePercent / 10000);
     }
 
     function addWallet(address _addressWallet, uint _sharePercent) public onlyOwner {
