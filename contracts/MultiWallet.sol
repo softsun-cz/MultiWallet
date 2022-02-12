@@ -21,7 +21,7 @@ contract MultiWallet is Ownable {
         require(token.balanceOf(msg.sender) >= _amount, 'send: Not enough tokens in sender wallet');
         token.safeTransferFrom(msg.sender, address(this), _amount);
         uint amountBal = token.balanceOf(address(this));
-        for (uint i = 0; i < wallets.length; i++) token.safeTransferFrom(address(this), wallets[i].addressWallet, amountBal * wallets[i].sharePercent / 10000);
+        for (uint i = 0; i < wallets.length; i++) token.safeTransfer(wallets[i].addressWallet, amountBal * wallets[i].sharePercent / 10000);
     }
 
     function addWallet(address _addressWallet, uint _sharePercent) public onlyOwner {
