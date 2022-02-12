@@ -22,10 +22,10 @@ async function main() {
  await runFunction(multiWallet, 'addWallet', addressTwo, 3000); // 30%
 
  // TEST ONLY:
- var Token = await ethers.getContractFactory('Token');
- var token = await Token.attach('0xF42a4429F107bD120C5E42E069FDad0AC625F615');
- await runFunction(token, 'approve', multiWallet.address, '115792089237316195423570985008687907853269984665640564039457584007913129639935');
- 
+ //var Token = await ethers.getContractFactory('Token');
+ //var token = await Token.attach('0xF42a4429F107bD120C5E42E069FDad0AC625F615');
+ //await runFunction(token, 'approve', multiWallet.address, '115792089237316195423570985008687907853269984665640564039457584007913129639935');
+
  getTotalCost();
  await getSummary();
 }
