@@ -23,7 +23,7 @@ yarn install
 - function **send**
   - **parameters:** token address, amount
   - **example:** send(0x987654321, 10500000000000000000)
-  - **note:** sends 10.5 tokens with token address 0x9887654321 into this contract and it will be sent to all wallets by their defined share
+  - **note:** sends 10.5 tokens with token address 0x987654321 into this contract and it will be sent to all wallets by their defined share
 
 - array **Wallet**
   - **parameters:** wallet address, share percentage (2 decimals)
