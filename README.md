@@ -16,14 +16,14 @@ yarn install
 
 ## Usage:
 
-- function *addWallet*
--- parameters: wallet address, share percentage (2 decimals)
--- example: addWallet(0x123456789, 5012) - adds wallet that gets 50,12% share of every token that comes into this contract
+- function **addWallet**
+  - parameters: wallet address, share percentage (2 decimals)
+  - example: addWallet(0x123456789, 5012) - adds wallet that gets 50,12% share of every token that comes into this contract
 
-- function *send*
--- parameters: token address, amount
--- example: send(0x987654321, 10500000000000000000) - sends 10.5 tokens with token address 0x9887654321 into this contract and it will be sent to all wallets by their defined share
+- function **send**
+  - parameters: token address, amount
+  - example: send(0x987654321, 10500000000000000000) - sends 10.5 tokens with token address 0x9887654321 into this contract and it will be sent to all wallets by their defined share
 
-- array *Wallet*
--- parameters: wallet address, share percentage (2 decimals)
--- lists all defined wallets and their percentage shares in this contract
+- array **Wallet**
+  - parameters: wallet address, share percentage (2 decimals)
+  - lists all defined wallets and their percentage shares in this contract
