@@ -7,8 +7,11 @@ var verifyScript = '';
 const confirmNum = 1;
 
 async function main() {
+ // SETTINGS:
  var addressOne = '0x67Cb8eA92E713b39cd222C0505645B5d1B5907c8';
  var addressTwo = '0x650E5c6071f31065d7d5Bf6CaD5173819cA72c41';
+
+ // CONTRACT DEPLOYMENT:
  getWelcomeMessage('MultiWallet');
  netInfo = await getNetworkInfo();
  getNetworkMessage();
@@ -16,16 +19,23 @@ async function main() {
  console.log('Deploying smart contracts ...');
  console.log();
  var multiWallet = await deploy('MultiWallet');
+
+ // SUMMARY - BEFORE FUNCTIONS:
  createVerifyScript();
  getTotalCost();
+
+ // FUNCTIONS:
  await runFunction(multiWallet, 'addWallet', addressOne, 7000); // 70%
  await runFunction(multiWallet, 'addWallet', addressTwo, 3000); // 30%
 
- // TEST ONLY:
+ // CONTRACT ATTACH - TEST:
  //var Token = await ethers.getContractFactory('Token');
  //var token = await Token.attach('0xF42a4429F107bD120C5E42E069FDad0AC625F615');
+
+ // FUNCTIONS - TEST:
  //await runFunction(token, 'approve', multiWallet.address, '115792089237316195423570985008687907853269984665640564039457584007913129639935');
 
+ // SUMMARY - AFTER FUNCTIONS:
  getTotalCost();
  await getSummary();
 }
