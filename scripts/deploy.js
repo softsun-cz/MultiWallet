@@ -18,16 +18,16 @@ async function main() {
  console.log();
  console.log('Deploying smart contracts ...');
  console.log();
- var token = await deploy('Token', 'XUSD Token', 'XUSD', '1000000000000', '18');
- //var multiWallet = await deploy('MultiWallet');
+ //var token = await deploy('Token', 'XUSD Token', 'XUSD', '1000000000000', '18');
+ var multiWallet = await deploy('MultiWallet');
  
  // SUMMARY - BEFORE FUNCTIONS:
  createVerifyScript();
  getTotalCost();
 
  // FUNCTIONS:
- //await runFunction(multiWallet, 'addWallet', addressOne, 7000); // 70%
- //await runFunction(multiWallet, 'addWallet', addressTwo, 3000); // 30%
+ await runFunction(multiWallet, 'addWallet', addressOne, 7000); // 70%
+ await runFunction(multiWallet, 'addWallet', addressTwo, 3000); // 30%
 
  // CONTRACT ATTACH - TEST:
  //var Token = await ethers.getContractFactory('Token');
